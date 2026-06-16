@@ -16,10 +16,11 @@ add_executable(nodecpp src/node2.cpp)
 add_executable(functioncpp src/function.cpp)
 add_executable(auto_shared src/auto_shared.cpp)
 add_executable(lambda src/lambda.cpp)
+add_executable(tonoe src/tonoe.cpp)
 
 ament_target_dependencies(nodecpp rclcpp)
 ament_target_dependencies(functioncpp rclcpp)
-install(TARGETS nodecpp functioncpp auto_shared lambda DESTINATION lib/${PROJECT_NAME})
+install(TARGETS nodecpp functioncpp auto_shared lambda tonoe DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
