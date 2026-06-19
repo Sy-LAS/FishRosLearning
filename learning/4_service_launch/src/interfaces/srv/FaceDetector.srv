@@ -1,0 +1,8 @@
+sensor_msgs/Image image
+---
+int16 num
+float32 use_name
+int32 right
+int32 top
+int32 left
+int32 bottom
