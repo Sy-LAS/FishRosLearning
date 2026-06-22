@@ -24,7 +24,7 @@
                 </material>
             </collision>
             <!-- 质量(惯性) -->
-            <xacro:cylinder_inertia m="1.0" r="${radius}" l="${length}"/>
+            <xacro:cylinder_inertia m="1.0" r="${radius}" h="${length}"/>
         </link>
         <joint name="base_print_joint" type="fixed">
             <parent link="base_foot_print"/>

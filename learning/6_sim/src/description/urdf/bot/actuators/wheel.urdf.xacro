@@ -19,5 +19,15 @@
             <origin rpy="0 0 0" xyz="${xyz}"/>
             <axis xyz="0 1 0"/>
         </joint>
+        <gazebo reference="${wheel_name}_link">
+            <material>Gazebo/green</material>
+            <!-- 摩擦系数（1：切向；2：法向） -->
+            <mu1 value="20"/>
+            <mu2 value="20"/>
+            <!-- 刚度 -->
+            <kp value="1000000000"/>
+            <!-- 阻尼 -->
+            <kd value="20"/>
+        </gazebo>
     </xacro:macro>
 </robot>

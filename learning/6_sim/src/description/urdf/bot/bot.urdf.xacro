@@ -7,7 +7,10 @@
 <xacro:include filename="$(find description)/urdf/bot/sensors/imu.urdf.xacro"/>
 <xacro:include filename="$(find description)/urdf/bot/actuators/wheel.urdf.xacro"/>
 <xacro:include filename="$(find description)/urdf/bot/actuators/caster.urdf.xacro"/>
-<xacro:include filename="$(find description)/urdf/common_inertial.urdf.xacro"/>
+<xacro:include filename="$(find description)/urdf/bot/plugin/common_inertial.urdf.xacro"/>
+<xacro:include filename="$(find description)/urdf/bot/plugin/gz_control_plugin.xacro"/>
+<xacro:include filename="$(find description)/urdf/bot/plugin/gz_sensors_plugin.xacro"/>
+
 
 <xacro:base_xacro length="0.12" radius="0.10"/>
 <xacro:lidar_xacro xyz="0 0 0.1" />
@@ -17,4 +20,8 @@
 <xacro:wheel_xacro wheel_name="wheel_right" xyz="0 -0.1 0.06" />
 <xacro:caster_xacro caster_name="caster_front" xyz="-0.08 0 0.76" />
 <xacro:caster_xacro caster_name="caster_right" xyz="-0.08 -0.1 0.76" />
+
+<xacro:gazebo_control_plugin/>
+<xacro:gazebo_sensor_plugin/>
+
 </robot>

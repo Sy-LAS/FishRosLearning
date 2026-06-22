@@ -38,5 +38,11 @@
             <child link="lidar_bear_link"/>
             <origin rpy="0 0 0" xyz="${xyz}"/>
         </joint>
+        <gazebo reference="lidar_bear_link">
+            <material>Gazebo/Black</material>
+        </gazebo>
+        <gazebo reference="lidar_link">
+            <material>Gazebo/Black</material>
+        </gazebo>
     </xacro:macro>
 </robot>
