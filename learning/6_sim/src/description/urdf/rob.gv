@@ -1,0 +1,8 @@
+digraph G {
+node [shape=box];
+"base" [label="base"];
+"imu" [label="imu"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base" -> "base_imu" [label="xyz: 0 0 0.05 \nrpy: 0 -0 0"]
+"base_imu" -> "imu"
+}

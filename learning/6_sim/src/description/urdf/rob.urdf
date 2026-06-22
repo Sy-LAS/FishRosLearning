@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot name="rob">
+  <!-- 身体 -->
+  <link name="base">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.5" length="1"/>
+      </geometry>
+      <!-- 材料、颜色 -->
+      <material name="white">
+        <color rgba="1.0 1.0 1.0 0.5"/>
+      </material>
+    </visual>
+  </link>
+  <!-- imu -->
+  <link name="imu">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0.5"/>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 0.8"/>
+      </material>
+    </visual>
+  </link>
+  <!-- joint -->
+  <joint name="base_imu" type="fixed">
+    <parent link="base"/>
+    <child link="imu"/>
+    <!-- 子对父偏移/偏转 -->
+    <origin rpy="0 0 0" xyz="0 0 0.05"/>
+    <!-- 旋转轴 -->
+    <axis xyz="0 0 0"/>
+    <!-- 限制 -->
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+  </joint>
+</robot>
