@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"> 
     <xacro:macro name="base_xacro" params="length radius">  
+        <!-- 虚拟 -->
+        <link name="base_foot_print"/>
         <link name="base_link">
             <visual>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -11,6 +13,23 @@
                     <color rgba="1.0 1.0 1.0 0.5"/>
                 </material>
             </visual>
+            <!-- 碰撞 -->
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <cylinder radius="${radius}" length="${length}"/>
+                </geometry>
+                <material name="white">
+                    <color rgba="1.0 1.0 1.0 0.5"/>
+                </material>
+            </collision>
+            <!-- 质量(惯性) -->
+            <xacro:cylinder_inertia m="1.0" r="${radius}" l="${length}"/>
         </link>
+        <joint name="base_print_joint" type="fixed">
+            <parent link="base_foot_print"/>
+            <child link="base_link"/>
+            <origin rpy="0 0 0" xyz="0 0 ${length/2+0.032-0.01}"/>
+        </joint>
     </xacro:macro>
 </robot>

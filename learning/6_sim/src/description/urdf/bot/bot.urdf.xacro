@@ -7,6 +7,7 @@
 <xacro:include filename="$(find description)/urdf/bot/sensors/imu.urdf.xacro"/>
 <xacro:include filename="$(find description)/urdf/bot/actuators/wheel.urdf.xacro"/>
 <xacro:include filename="$(find description)/urdf/bot/actuators/caster.urdf.xacro"/>
+<xacro:include filename="$(find description)/urdf/common_inertial.urdf.xacro"/>
 
 <xacro:base_xacro length="0.12" radius="0.10"/>
 <xacro:lidar_xacro xyz="0 0 0.1" />
